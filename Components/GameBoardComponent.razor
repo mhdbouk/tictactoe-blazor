@@ -1,0 +1,26 @@
+<div class="game-container">
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="row" id="@i">
+            @for (int j = 0; j < 3; j++)
+            {
+                int row = i;
+                int col = j;
+                <div @onclick="() => BoxClicked(row, col)" id="column-@row-@col">@_board[row, col]</div>
+            }
+        </div>
+    }
+</div>
+
+@if (_winner is not null)
+{
+    <h3 class="winner">@_winner</h3>
+}
+
+<div class="events">
+    <h4>Events</h4>
+    @foreach (var item in _events)
+    {
+        <p>@item</p>
+    }
+</div>
