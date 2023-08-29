@@ -75,9 +75,3 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Enjoy playing TicTacToe with your friends using this Blazor Web Assembly implementation! If you have any questions or feedback, feel free to open an issue or reach out to us.
-
-**Author:** Mohamad Dbouk
