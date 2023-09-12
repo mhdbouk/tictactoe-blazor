@@ -20,3 +20,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Change base-tag in index.html from / to tictactoe-blazor
       run: sed -i 's/<base href="\/" \/>/<base href="\/tictactoe-blazor\/" \/>/g' release/wwwroot/index.html
+    - name: Add .nojekyll file
+      run: touch release/wwwroot/.nojekyll
+    - name: copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
