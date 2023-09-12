@@ -12,7 +12,7 @@ jobs:
       with:
         dotnet-version: 7.x
     - name: Publish .NET Core Project
-      run: dotnet publish TicTacToe/TicTacToe.csproj -c Release -o release --nologo
+      run: dotnet publish src/TicTacToe/TicTacToe.csproj -c Release -o release --nologo
     - name: Change base-tag in index.html from / to tictactoe-blazor
       run: sed -i 's/<base href="\/" \/>/<base href="\/tictactoe-blazor\/" \/>/g' release/wwwroot/index.html
     - name: Add .nojekyll file
