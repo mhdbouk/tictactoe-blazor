@@ -1,0 +1,10 @@
+@using global::TicTacToe.Constants
+<!-- MainComponent.razor -->
+<div class="menu-container mt-20">
+    <h1 class="header">Tic Tac Toe</h1>
+    <div class="menu-buttons">
+        <button class="menu-button" @onclick="() => StartGame(GameType.AI)">AI</button>
+        <button class="menu-button" @onclick="() => StartGame(GameType.Online)">Online</button>
+        <button class="menu-button" @onclick="() => StartGame(GameType.TwoPlayer)">2 Player</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+@page "/game/"
+@page "/game/{gameType}"
+
+<GameBoardComponent GameType="GameTypeVal"></GameBoardComponent>
+
+@code {
+
+    [Parameter]
+    public string GameType { get; set; } = default!;
+
+    private GameType GameTypeVal = Constants.GameType.Undefined;
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+    protected override void OnInitialized()
+    {
+        if (!Enum.TryParse<GameType>(GameType, out GameTypeVal) || GameTypeVal == Constants.GameType.Undefined)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+}

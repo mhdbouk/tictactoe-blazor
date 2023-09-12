@@ -31,6 +31,105 @@ h1:focus {
         content: "An error has occurred."
     }
 
+.menu-container {
+    text-align: center;
+    font-family: "Press Start 2P", cursive; /* Use a retro game font */
+}
+
+.mt-20 {
+    margin-top: 20%;
+}
+
+.header {
+    font-size: 36px; /* Bigger text size for the header */
+    color: white; /* Fancy gold color */
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+    margin-bottom: 50px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column; /* Vertical arrangement */
+    align-items: center; /* Center items vertically */
+}
+
+.menu-button {
+    font-size: 18px; /* Smaller text size */
+    padding: 10px 20px; /* Make all buttons the same size */
+    margin: 10px;
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    border: 2px solid #fff; /* White border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Press Start 2P", cursive; /* Use the same retro font */
+    width: 250px;
+    height: 50px;
+}
+
+.menu-button:hover {
+    background-color: #fff; /* White background color on hover */
+    color: #000; /* Black text color on hover */
+}
+
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    }
+    to {
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+    }
+}
+
+.back-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.game-container {
+    font-family: "Press Start 2P", cursive; /* Use a retro game font */
+}
+
+.row > div {
+    font-size: 24px; /* Adjust text size for the game board */
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    border: 2px solid #fff; /* White border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.row > div:hover {
+    background-color: #fff; /* White background color on hover */
+    color: #000; /* Black text color on hover */
+}
+
+.winning-cell  {
+    background-color: #fff; /* White background color on hover */
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+    color: #FFD700; /* Fancy gold color */
+}
+.winner {
+    font-size: 24px; /* Adjust text size for the winner message */
+    color: #FFD700; /* Fancy gold color */
+    text-align: center;
+    margin-top: 10px;
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+}
+
+.events {
+    margin-top: 20px;
+    font-size: 14px; /* Smaller text size for events */
+    background-color: #000; /* Black background color for events */
+    color: #fff; /* White text color for events */
+    border: 2px solid #fff; /* White border for events */
+    padding: 10px;
+}
+
 
 .game-container {
     width: 300px;
@@ -46,12 +145,12 @@ h1:focus {
 }
 /* Style the individual cells */
 .row div {
-    width: 80px; 
+    width: 80px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2c3e50; 
+    background-color: #2c3e50;
     font-size: 24px;
     color: #ecf0f1;
     border: 2px solid #34495e;
@@ -68,4 +167,53 @@ h1:focus {
 
 .winner {
     text-align: center;
+}
+
+body {
+    background-color: #222; /* Slightly darker background for the whole page */
+}
+.back-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1; /* Ensure the button is above other elements */
+}
+
+
+.events-toggle {
+    display: none; /* Hide the actual checkbox */
+}
+
+.events-toggle-label {
+    background-color: #FFD700;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    left: 40px; /* Adjust the position as needed */
+    top: 10px;
+    z-index: 1; /* Ensure the label is above other elements */
+}
+
+/* Hide the events section by default */
+.events {
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px;
+    display: none;
+}
+
+/* Show the events section when the toggle is checked */
+.events-toggle:checked + .events-toggle-label + .events {
+    display: block;
 }

@@ -1,15 +1,42 @@
 using Microsoft.AspNetCore.Components;
 using System.Security.Cryptography;
+using TicTacToe.Constants;
 
 namespace TicTacToe.Components;
 
 public partial class GameBoardComponent : ComponentBase
 {
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+    [Parameter]
+    public GameType GameType { get; set; }
+
     private List<string> _events = new List<string>() { $"Started @ {DateTime.Now}"};
     private string?[,] _board = new string[3, 3];
+    private List<(int Row, int Col)> _winningMoves = new List<(int Row, int Col)>();
     private string? _winner = null;
     private bool _gameOver = false;
 
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+    
+    private string IsWinnerCell(int row, int col)
+    {
+        if (!_gameOver)
+        {
+            return string.Empty;
+        }
+
+        if (CheckWinner(row, col))
+        {
+            return "winning-cell";
+        }
+
+        return string.Empty;
+    }
+    
     private void BoxClicked(int row, int col)
     {
         if (_board[row, col]?.Length > 0)
@@ -137,9 +164,13 @@ public partial class GameBoardComponent : ComponentBase
                 }
             }
         }
-
+        _winningMoves.Clear();
         return true;
     }
+
+    private bool CheckWinner(int row, int col)
+        => _winningMoves.Contains((row, col));
+
     private bool CheckWinner(string player)
     {
         return CheckRows(player) || CheckColumns(player) || CheckDiagonals(player);
@@ -151,6 +182,10 @@ public partial class GameBoardComponent : ComponentBase
         {
             if (_board[row, 0] == player && _board[row, 1] == player && _board[row, 2] == player)
             {
+                _winningMoves.Clear();
+                _winningMoves.Add((row, 0));
+                _winningMoves.Add((row, 1));
+                _winningMoves.Add((row, 2));
                 return true;
             }
         }
@@ -163,6 +198,11 @@ public partial class GameBoardComponent : ComponentBase
         {
             if (_board[0, col] == player && _board[1, col] == player && _board[2, col] == player)
             {
+                _winningMoves.Clear();
+                _winningMoves.Add((0, col));
+                _winningMoves.Add((1, col));
+                _winningMoves.Add((2, col));
+
                 return true;
             }
         }
@@ -171,8 +211,25 @@ public partial class GameBoardComponent : ComponentBase
     
     private bool CheckDiagonals(string player)
     {
-        return (_board[0, 0] == player && _board[1, 1] == player && _board[2, 2] == player) ||
-               (_board[0, 2] == player && _board[1, 1] == player && _board[2, 0] == player);
+
+        if (_board[0, 0] == player && _board[1, 1] == player && _board[2, 2] == player)
+        {
+            _winningMoves.Clear();
+            _winningMoves.Add((0, 0));
+            _winningMoves.Add((1, 1));
+            _winningMoves.Add((2, 2));
+            return true;
+        }
+        if (_board[0, 2] == player && _board[1, 1] == player && _board[2, 0] == player)
+        {
+            _winningMoves.Clear();
+            _winningMoves.Add((0, 2));
+            _winningMoves.Add((1, 1));
+            _winningMoves.Add((2, 0));
+            return true;
+        }
+
+        return false;
 
     }
 

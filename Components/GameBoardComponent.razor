@@ -1,3 +1,8 @@
+    <button class="back-button" @onclick="GoBack">Back</button>
+<div class="menu-container">   
+    <h1 class="header">Tic Tac Toe @(_gameOver ? $"- {_winner}" : "")</h1>
+</div>
+
 <div class="game-container">
     @for (int i = 0; i < 3; i++)
     {
@@ -6,21 +11,22 @@
             {
                 int row = i;
                 int col = j;
-                <div @onclick="() => BoxClicked(row, col)" id="column-@row-@col">@_board[row, col]</div>
+                <div @onclick="() => BoxClicked(row, col)" class="@IsWinnerCell(row, col)" id="column-@row-@col">@_board[row, col]</div>
             }
         </div>
     }
 </div>
 
-@if (_winner is not null)
-{
-    <h3 class="winner">@_winner</h3>
-}
-
+<!-- Add a toggle button for events -->
+<input type="checkbox" id="toggle-events" class="events-toggle" />
+<label for="toggle-events" class="events-toggle-label">Show Events</label>
 <div class="events">
     <h4>Events</h4>
+    <p>Selected @GameType</p>
+    
     @foreach (var item in _events)
     {
         <p>@item</p>
     }
 </div>
+
