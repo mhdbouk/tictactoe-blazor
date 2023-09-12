@@ -3,20 +3,20 @@
 @using TicTacToe.Components
 @using TicTacToe.Constants
 
-<GameBoardComponent GameType="GameTypeVal"></GameBoardComponent>
+<GameBoardComponent GameType="_gameTypeVal"></GameBoardComponent>
 
 @code {
 
     [Parameter]
     public string GameType { get; set; } = default!;
 
-    private GameType GameTypeVal = Constants.GameType.Undefined;
+    private GameType _gameTypeVal = Constants.GameType.Undefined;
 
     [Inject]
     private NavigationManager NavigationManager { get; set; } = default!;
     protected override void OnInitialized()
     {
-        if (!Enum.TryParse<GameType>(GameType, out GameTypeVal) || GameTypeVal == Constants.GameType.Undefined)
+        if (!Enum.TryParse<GameType>(GameType, out _gameTypeVal) || _gameTypeVal == Constants.GameType.Undefined)
         {
             NavigationManager.NavigateTo("/");
         }
