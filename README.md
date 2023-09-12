@@ -58,11 +58,12 @@ To get started with this TicTacToe Blazor Web Assembly project locally, follow t
 
 ## Usage
 
-- You play as "X" and the AI opponent plays as "O".
-- Click on the empty cells of the game board to place your "X".
+- Select the playing mode (AI, 2 Players, Online)
+- When selecting AI, you play as "X" and the AI opponent plays as "O".
+- Click on the empty cells of the game board to place your move.
 - The AI opponent will make its move automatically.
 - The game will automatically detect a win, loss, or draw and display the result.
-- To start a new game, simply refresh the page.
+- To start a new game, click on the Restart button.
 
 ## Contributing
 
