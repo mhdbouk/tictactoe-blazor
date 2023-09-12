@@ -1,6 +1,7 @@
 # TicTacToe Blazor Web Assembly
 
-![TicTacToe Preview](tictactoe-preview.png)
+![TicTacToe Preview 1](preview-1.png)
+![TicTacToe Preview 2](preview-2.png)
 
 Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's.
 
