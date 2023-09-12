@@ -1,0 +1,227 @@
+h1:focus {
+    outline: none;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred."
+    }
+
+.menu-container {
+    text-align: center;
+    font-family: "Press Start 2P", cursive; /* Use a retro game font */
+}
+
+.mt-20 {
+    margin-top: 20%;
+}
+
+.mt-50-px {
+    margin-top: 50px;
+}
+
+.header {
+    font-size: 36px; /* Bigger text size for the header */
+    color: white; /* Fancy gold color */
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+    margin-bottom: 50px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column; /* Vertical arrangement */
+    align-items: center; /* Center items vertically */
+}
+
+.menu-button {
+    font-size: 18px; /* Smaller text size */
+    padding: 10px 20px; /* Make all buttons the same size */
+    margin: 10px;
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    border: 2px solid #fff; /* White border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Press Start 2P", cursive; /* Use the same retro font */
+    width: 250px;
+    height: 50px;
+}
+
+.menu-button.disabled {
+    cursor: not-allowed;
+}
+
+.menu-button:hover {
+    background-color: #fff; /* White background color on hover */
+    color: #000; /* Black text color on hover */
+}
+
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    }
+    to {
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+    }
+}
+
+.back-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.game-container {
+    font-family: "Press Start 2P", cursive; /* Use a retro game font */
+}
+
+.row > div {
+    font-size: 24px; /* Adjust text size for the game board */
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    border: 2px solid #fff; /* White border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.row > div:hover {
+    background-color: #fff; /* White background color on hover */
+    color: #000; /* Black text color on hover */
+}
+
+.winning-cell  {
+    background-color: #fff; /* White background color on hover */
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+    color: #FFD700; /* Fancy gold color */
+}
+.winner {
+    font-size: 24px; /* Adjust text size for the winner message */
+    color: #FFD700; /* Fancy gold color */
+    text-align: center;
+    margin-top: 10px;
+    animation: neon-glow 1.5s infinite alternate; /* Add an 8-bit style animation */
+}
+
+.events {
+    margin-top: 20px;
+    font-size: 14px; /* Smaller text size for events */
+    background-color: #000; /* Black background color for events */
+    color: #fff; /* White text color for events */
+    border: 2px solid #fff; /* White border for events */
+    padding: 10px;
+}
+
+
+.game-container {
+    width: 300px;
+    margin: 50px auto 0;
+}
+
+/* Style each row */
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px;
+}
+/* Style the individual cells */
+.row div {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50;
+    font-size: 24px;
+    color: #ecf0f1;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add hover effect */
+.row div:hover {
+    background-color: #3498db; /* Brighter blue on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.winner {
+    text-align: center;
+}
+
+body {
+    background-color: #222; /* Slightly darker background for the whole page */
+}
+.back-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1; /* Ensure the button is above other elements */
+}
+
+
+.events-toggle {
+    display: none; /* Hide the actual checkbox */
+}
+
+.events-toggle-label {
+    background-color: #FFD700;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    left: 40px; /* Adjust the position as needed */
+    top: 10px;
+    z-index: 1; /* Ensure the label is above other elements */
+}
+
+/* Hide the events section by default */
+.events {
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px;
+    display: none;
+}
+
+/* Show the events section when the toggle is checked */
+.events-toggle:checked + .events-toggle-label + .events {
+    display: block;
+}
