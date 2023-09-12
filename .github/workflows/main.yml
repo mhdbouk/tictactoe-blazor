@@ -13,14 +13,14 @@ jobs:
         dotnet-version: 7.x
     - name: Publish .NET Core Project
       run: dotnet publish TicTacToe.csproj -c Release -o release --nologo
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.3
-      with:
-        folder: release/wwwroot
-        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Change base-tag in index.html from / to tictactoe-blazor
       run: sed -i 's/<base href="\/" \/>/<base href="\/tictactoe-blazor\/" \/>/g' release/wwwroot/index.html
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
     - name: copy index.html to 404.html
       run: cp release/wwwroot/index.html release/wwwroot/404.html
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+        folder: release/wwwroot
+        token: ${{ secrets.GITHUB_TOKEN }}
