@@ -24,7 +24,7 @@ Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This i
 - Play against an AI opponent.
 - Interactive game board.
 - Real-time feedback on game status.
-- Multiplayer (Co-op) _**WIP**_
+- Multiplayer (Co-op)
 - Online Multiplayer _**WIP**_
 
 ## Blog Post
