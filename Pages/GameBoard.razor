@@ -18,7 +18,7 @@
     {
         if (!Enum.TryParse<GameType>(GameType, out _gameTypeVal) || _gameTypeVal == Constants.GameType.Undefined)
         {
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo($"{NavigationManager.BaseUri}/");
         }
     }
 }

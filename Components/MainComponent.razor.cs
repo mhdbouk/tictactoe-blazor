@@ -9,6 +9,6 @@ public partial class MainComponent : ComponentBase
     private NavigationManager NavigationManager { get; set; } = default!;
     private void StartGame(GameType gameType)
     {
-        NavigationManager.NavigateTo($"/game/{gameType}");
+        NavigationManager.NavigateTo($"{NavigationManager.BaseUri}/game/{gameType}");
     }
 }
