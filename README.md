@@ -6,7 +6,7 @@ Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This i
 
 ## Table of Contents
 
-[//]: # (- [Demo]&#40;#demo&#41;)
+- [Demo](#demo)
 - [Features](#features)
 - [Blog Post](#blog-post)
 - [Getting Started](#getting-started)
@@ -14,10 +14,9 @@ Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This i
 - [Contributing](#contributing)
 - [License](#license)
 
-[//]: # (## Demo)
+## Demo
 
-[//]: # ()
-[//]: # (You can try out the live demo of the TicTacToe game [here]&#40;https://tictactoe.mdbouk.com&#41;.)
+You can try out the live demo of the TicTacToe game [here](https://mhdbouk.github.io/tictactoe-blazor/).
 
 ## Features
 
