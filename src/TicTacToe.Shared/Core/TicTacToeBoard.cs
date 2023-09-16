@@ -7,13 +7,13 @@ public class TicTacToeBoard
 {
     private readonly Cell[,] _cells;
     private List<(int Row, int Col)> _winningMoves = default!;
-    
+
     public TicTacToeBoard()
     {
         _cells = new Cell[3, 3];
         InitializeBoard();
     }
-    public string? Winner { get; private set; } = null;
+    public string? Winner { get; private set; }
 
     private void InitializeBoard()
     {
@@ -54,7 +54,7 @@ public class TicTacToeBoard
 
         return false;
     }
-    
+
     private Player? GetWinningPlayer()
     {
         if (CheckWinner(Player.X))
@@ -71,12 +71,12 @@ public class TicTacToeBoard
     }
     public void SetCell(int row, int col, Player player)
         => _cells[row, col].Player = player;
-    
+
     private bool CheckTie()
     {
-        for (var row = 0; row < 3; row++)
+        for (int row = 0; row < 3; row++)
         {
-            for (var col = 0; col < 3; col++)
+            for (int col = 0; col < 3; col++)
             {
                 if (_cells[row, col].Player == Player.Undefined)
                 {
@@ -87,10 +87,10 @@ public class TicTacToeBoard
         _winningMoves.Clear();
         return true;
     }
-    
+
     public (int row, int col) GetAiNextMove(Player player)
     {
-        var (row, col) = GetWinningMove(player);
+        (int? row, int? col) = GetWinningMove(player);
         if ((row, col) != (null, null)) return (row!.Value, col!.Value);
 
         (row, col) = GetWinningMove(player == Player.O ? Player.X : Player.O);
@@ -103,16 +103,16 @@ public class TicTacToeBoard
     }
     private (int row, int col) RandomTurn()
     {
-        var row = RandomNumberGenerator.GetInt32(0, 3);
-        var col = RandomNumberGenerator.GetInt32(0, 3);
+        int row = RandomNumberGenerator.GetInt32(0, 3);
+        int col = RandomNumberGenerator.GetInt32(0, 3);
         return _cells[row, col].Player == Player.Undefined ? (row, col) : RandomTurn();
     }
 
     private (int? row, int? col) GetWinningMove(Player player)
     {
-        for (var row = 0; row < 3; row++)
+        for (int row = 0; row < 3; row++)
         {
-            for (var col = 0; col < 3; col++)
+            for (int col = 0; col < 3; col++)
             {
                 if (_cells[row, col].Player == Player.Undefined && IsWinningMove(player, row, col))
                 {
@@ -126,7 +126,7 @@ public class TicTacToeBoard
     private bool IsWinningMove(Player player, int row, int col)
     {
         _cells[row, col].Player = player;
-        var isWinningMove = CheckWinner(player);
+        bool isWinningMove = CheckWinner(player);
         _cells[row, col].Player = Player.Undefined; // Reset the move regardless of win or not
         return isWinningMove;
     }
@@ -135,10 +135,10 @@ public class TicTacToeBoard
     {
         return CheckRows(player) || CheckColumns(player) || CheckDiagonals(player);
     }
-    
+
     private bool CheckRows(Player player)
     {
-        for (var row = 0; row < 3; row++)
+        for (int row = 0; row < 3; row++)
         {
             if (_cells[row, 0].Player == player && _cells[row, 1].Player == player && _cells[row, 2].Player == player)
             {
@@ -151,10 +151,10 @@ public class TicTacToeBoard
         }
         return false;
     }
-    
+
     private bool CheckColumns(Player player)
     {
-        for (var col = 0; col < 3; col++)
+        for (int col = 0; col < 3; col++)
         {
             if (_cells[0, col].Player == player && _cells[1, col].Player == player && _cells[2, col].Player == player)
             {
@@ -168,7 +168,7 @@ public class TicTacToeBoard
         }
         return false;
     }
-    
+
     private bool CheckDiagonals(Player player)
     {
 
