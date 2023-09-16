@@ -1,0 +1,24 @@
+@page "/game/"
+@page "/game/{gameType}"
+@using TicTacToe.Shared.Components
+@using TicTacToe.Shared.Constants
+
+<GameBoardComponent GameType="_gameTypeVal"></GameBoardComponent>
+
+@code {
+
+    [Parameter]
+    public string GameType { get; set; } = default!;
+
+    private GameType _gameTypeVal = Constants.GameType.Undefined;
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+    protected override void OnInitialized()
+    {
+        if (!Enum.TryParse<GameType>(GameType, out _gameTypeVal) || _gameTypeVal == Constants.GameType.Undefined)
+        {
+            NavigationManager.NavigateTo($"{NavigationManager.BaseUri}/");
+        }
+    }
+}
