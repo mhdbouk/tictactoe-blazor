@@ -1,7 +1,11 @@
 # TicTacToe Blazor Web Assembly with MAUI Support
 
-![TicTacToe Preview 1](preview-1.png)
-![TicTacToe Preview 2](preview-2.png)
+![TicTacToe Preview](https://mdbouk.com/wp-content/uploads/2023/09/image-2-1024x580.png)
+  <img src="preview-1.png" alt="TicTacToe Preview 1" style="width:49%;">
+  <img src="preview-2.png" alt="TicTacToe Preview 2" style="width:49%;">
+
+
+
 
 Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly, now with MAUI Blazor support. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's on both desktop and mobile.
 
