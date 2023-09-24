@@ -1,15 +1,15 @@
-# TicTacToe Blazor Web Assembly
+# TicTacToe Blazor Web Assembly with MAUI Support
 
 ![TicTacToe Preview 1](preview-1.png)
 ![TicTacToe Preview 2](preview-2.png)
 
-Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's.
+Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly, now with MAUI Blazor support. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's on both desktop and mobile.
 
 ## Table of Contents
 
 - [Demo](#demo)
 - [Features](#features)
-- [Blog Post](#blog-post)
+- [Blog Posts](#blog-posts)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -21,15 +21,16 @@ You can try out the live demo of the TicTacToe game [here](https://mhdbouk.githu
 
 ## Features
 
+- Work on Browser, Mobile, and Native Desktop app using MAUI.
 - Play against an AI opponent.
 - Interactive game board.
 - Real-time feedback on game status.
 - Multiplayer (Co-op)
 - Online Multiplayer _**WIP**_
 
-## Blog Post
+## Blog Posts
 
-For a detailed explanation of how this project was built, check out our blog post [Let's Build a Tic Tac Toe Game with Blazor WebAssembly!](https://mdbouk.com/lets-build-a-tic-tac-toe-game-with-blazor-webassembly/).
+For a detailed explanation of how this project was built, check out our blog posts [Let's Build a Tic Tac Toe Game with Blazor WebAssembly!](https://mdbouk.com/lets-build-a-tic-tac-toe-game-with-blazor-webassembly/) and [Bringing Blazor to Desktop and Mobile with MAUI](https://mdbouk.com/bringing-blazor-to-desktop-and-mobile-with-maui/)
 
 
 ## Getting Started
