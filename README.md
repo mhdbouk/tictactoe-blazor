@@ -7,7 +7,7 @@
 
 
 
-Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly, now with MAUI Blazor support. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's on both desktop and mobile.
+Welcome to the TicTacToe Blazor Web Assembly project with an AI opponent! This is a simple implementation of the classic Tic-Tac-Toe game using Blazor Web Assembly, now with MAUI Blazor support. In this version, you'll be challenging an AI opponent in the timeless battle of X's and O's on both desktop and mobile.  The AI is now unbeatable!
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ To get started with this TicTacToe Blazor Web Assembly project locally, follow t
 
 2. **Build and run the project:**
 
-   Make sure you have the [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) installed.
+   Make sure you have the [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) installed.
 
     ```bash
     dotnet build
