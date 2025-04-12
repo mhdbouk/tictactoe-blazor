@@ -7,15 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Web", "src\TicTac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Shared", "src\TicTacToe.Shared\TicTacToe.Shared.csproj", "{D41850A9-E908-4BAA-978F-B6C308AF4DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Maui", "src\TicTacToe.Maui\TicTacToe.Maui.csproj", "{7A1E6CB1-10B7-4063-8D01-34238604E144}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FC849AF4-F13B-4FA6-A9A9-B2F98086166D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,9 +21,8 @@ Global
 		{D41850A9-E908-4BAA-978F-B6C308AF4DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D41850A9-E908-4BAA-978F-B6C308AF4DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D41850A9-E908-4BAA-978F-B6C308AF4DC4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A1E6CB1-10B7-4063-8D01-34238604E144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A1E6CB1-10B7-4063-8D01-34238604E144}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A1E6CB1-10B7-4063-8D01-34238604E144}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A1E6CB1-10B7-4063-8D01-34238604E144}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

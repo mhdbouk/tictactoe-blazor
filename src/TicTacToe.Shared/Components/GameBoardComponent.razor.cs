@@ -12,7 +12,7 @@ public partial class GameBoardComponent : ComponentBase
     [Inject]
     public NavigationManager NavigationManager { get; set; } = default!;
     
-    private TicTacToeBoard _board = new TicTacToeBoard();
+    private readonly TicTacToeBoard _board = new();
     private Player _currentTurn = Player.Undefined;
 
     protected override void OnInitialized()
@@ -46,7 +46,7 @@ public partial class GameBoardComponent : ComponentBase
         {
             case GameType.AI:
                 _currentTurn = _currentTurn == Player.X ? Player.O : Player.X;
-                var (row, col) = _board.GetAiNextMove(_currentTurn);
+                (int row, int col) = _board.GetAiNextMove(_currentTurn);
                 _board.SetCell(row, col, _currentTurn);
                 _currentTurn = _currentTurn == Player.X ? Player.O : Player.X;
                 break;

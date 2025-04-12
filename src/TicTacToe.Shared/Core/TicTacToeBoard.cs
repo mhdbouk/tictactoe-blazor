@@ -18,7 +18,7 @@ public class TicTacToeBoard
     private void InitializeBoard()
     {
         Winner = null;
-        _winningMoves = new List<(int Row, int Col)>();
+        _winningMoves = [];
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 3; col++)
@@ -30,7 +30,7 @@ public class TicTacToeBoard
 
     public Player? GetCellPlayer(int row, int col)
     {
-        var player = _cells[row, col].Player;
+        Player player = _cells[row, col].Player;
         return player is Player.Undefined ? null : player;
     }
 
@@ -39,7 +39,7 @@ public class TicTacToeBoard
 
     public bool IsGameOver()
     {
-        var winningPlayer = GetWinningPlayer();
+        Player? winningPlayer = GetWinningPlayer();
 
         if (winningPlayer is not null)
         {
@@ -88,24 +88,109 @@ public class TicTacToeBoard
         return true;
     }
 
+
     public (int row, int col) GetAiNextMove(Player player)
     {
         (int? row, int? col) = GetWinningMove(player);
         if ((row, col) != (null, null)) return (row!.Value, col!.Value);
 
-        (row, col) = GetWinningMove(player == Player.O ? Player.X : Player.O);
         if ((row, col) == (null, null))
         {
-            (row, col) = RandomTurn();
+            (row, col) = FindBestMove(player);
         }
 
         return (row!.Value, col!.Value);
     }
-    private (int row, int col) RandomTurn()
+
+    private (int row, int col) FindBestMove(Player player)
     {
-        int row = RandomNumberGenerator.GetInt32(0, 3);
-        int col = RandomNumberGenerator.GetInt32(0, 3);
-        return _cells[row, col].Player == Player.Undefined ? (row, col) : RandomTurn();
+        int bestScore = int.MinValue;
+        (int row, int col) bestMove = (-1, -1);
+
+        // Iterate through all cells to find the best move
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 3; col++)
+            {
+                // Check if the cell is empty
+                if (_cells[row, col].Player == Player.Undefined)
+                {
+                    // Make the move
+                    _cells[row, col].Player = player;
+                    // Call Minimax recursively and choose the maximum value
+                    int score = Minimax(_cells, 0, false, player);
+                    // Undo the move
+                    _cells[row, col].Player = Player.Undefined;
+
+                    // Update the best score and best move if the current move is better
+                    if (score > bestScore)
+                    {
+                        bestScore = score;
+                        bestMove = (row, col);
+                    }
+                }
+            }
+        }
+
+        return bestMove;
+    }
+
+    private int Minimax(Cell[,] board, int depth, bool isMaximizing, Player player)
+    {
+        // Check for a winner and return a score
+        Player? winner = GetWinningPlayer();
+        if (winner == player) return 10 - depth; // AI wins
+        if (winner == (player == Player.X ? Player.O : Player.X)) return depth - 10; // Opponent wins
+        if (CheckTie()) return 0; // Tie
+
+        if (isMaximizing)
+        {
+            int bestScore = int.MinValue;
+            // Iterate through all cells
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    // Check if the cell is empty
+                    if (board[row, col].Player == Player.Undefined)
+                    {
+                        // Make the move
+                        board[row, col].Player = player;
+                        // Call Minimax recursively and choose the maximum value
+                        int score = Minimax(board, depth + 1, false, player);
+                        // Undo the move
+                        board[row, col].Player = Player.Undefined;
+                        // Update the best score
+                        bestScore = Math.Max(score, bestScore);
+                    }
+                }
+            }
+            return bestScore;
+        }
+        else
+        {
+            int bestScore = int.MaxValue;
+            // Iterate through all cells
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    // Check if the cell is empty
+                    if (board[row, col].Player == Player.Undefined)
+                    {
+                        // Make the move
+                        board[row, col].Player = player == Player.X ? Player.O : Player.X;
+                        // Call Minimax recursively and choose the minimum value
+                        int score = Minimax(board, depth + 1, true, player);
+                        // Undo the move
+                        board[row, col].Player = Player.Undefined;
+                        // Update the best score
+                        bestScore = Math.Min(score, bestScore);
+                    }
+                }
+            }
+            return bestScore;
+        }
     }
 
     private (int? row, int? col) GetWinningMove(Player player)
