@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TicTacToe.Web",
   "resources": {
-    "hash": "sha256-kx6OaZt6d8RXaX+BJ8XZGV0Q8iyWKU60YR/2RBI1mSs=",
+    "hash": "sha256-UKTKBevr8vsQTGN+JdqP7WOD1Bc+iK8e0kAz8dGKTN0=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.ygsng3cyb2.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.e5f7shz2gy.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -34,8 +34,8 @@
       "System.Text.Encodings.Web.5w28q6ifw5.wasm": "System.Text.Encodings.Web.wasm",
       "System.Text.Json.sxxp9ia8k0.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.gjrc7fe0iy.wasm": "System.Text.RegularExpressions.wasm",
-      "TicTacToe.Shared.k4tjszmwgu.wasm": "TicTacToe.Shared.wasm",
-      "TicTacToe.Web.b52pccr9jx.wasm": "TicTacToe.Web.wasm",
+      "TicTacToe.Shared.fdrafy13ic.wasm": "TicTacToe.Shared.wasm",
+      "TicTacToe.Web.899ess569a.wasm": "TicTacToe.Web.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.hvg7u8bimp.js": "dotnet.native.js",
       "dotnet.native.3c4wvb350q.wasm": "dotnet.native.wasm",
@@ -92,8 +92,8 @@
       "System.Text.Encodings.Web.5w28q6ifw5.wasm": "sha256-pdKoJJI3yt1NF2Lx1MGO++1RtPSzree8qeWFFtJOnKo=",
       "System.Text.Json.sxxp9ia8k0.wasm": "sha256-EEn1oVTY0eU6OAnnHlw8gjjgJzNa79vtZbu4hOXOAL8=",
       "System.Text.RegularExpressions.gjrc7fe0iy.wasm": "sha256-bPlopc5D66ZLknzJ5PcpsBvpXxGmy7xL7+4gm/cjTdc=",
-      "TicTacToe.Shared.k4tjszmwgu.wasm": "sha256-zH30uq3zJRGNQR7RMAwprZMnY8XtSe+yu1Io5ZJM7bk=",
-      "TicTacToe.Web.b52pccr9jx.wasm": "sha256-4fz8HwXUhPnYNYIg2HUp/c74IO0wzvqI14/VFpR2jaQ="
+      "TicTacToe.Shared.fdrafy13ic.wasm": "sha256-7U8CozaOWjC/zkHz8uuyq1/G5G3FEFVr7fvyxlvZmTE=",
+      "TicTacToe.Web.899ess569a.wasm": "sha256-XIIzM/apkl4BcOpYTt5rsQi9e54jHV7A7dzsZwexE2U="
     }
   },
   "cacheBootResources": true,
