@@ -22,7 +22,7 @@ public partial class GameBoardComponent : ComponentBase
     
     private void GoBack()
     {
-        NavigationManager.NavigateTo($"{NavigationManager.BaseUri}/");
+        NavigationManager.NavigateTo($"{NavigationManager.BaseUri}");
     }
 
     private void BoxClicked(int row, int col)
